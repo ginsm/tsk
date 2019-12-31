@@ -51,13 +51,12 @@ const Editor = {
   editTask(ID, database) {
     // Get the task by ID
     const task = database[ID];
-    const hlID = theme.hl2(ID);
 
     // Start the prompt
     prompt
       .editor({
         message: oneLine`
-          Editing Task ${hlID} in list ${theme.hl(
+          Editing Task ${ID} in list ${theme.hl(
             capitalize(currentList)
             )}`,
         value: stripIndent`
@@ -89,7 +88,7 @@ const Editor = {
 
   processAnswer(task, ID, database) {
     return function(res) {
-      if (res.confirm) {
+      if (res.confirm || process.env.confirm__ == 'false') {
         // Get the response as an array of strings
         const response = res.editor.split('\n');
 
@@ -98,21 +97,26 @@ const Editor = {
 
         // Get the subject and body from the response
         const subject = response[indexOfHeader('Subject')];
-        const body = response.slice(indexOfHeader('Body')).join('\n');
+        let body = response.slice(indexOfHeader('Body')).join('\n');
+
+        // Remove end of body newlines
+        if (body.slice(-1) == "\n") {
+          body = body.slice(0, -1);
+        }
 
         // Build the task
         const ans = {
           subject, 
-          ...(body != '' ? {body: body.substring(0, body.length - 1)} : {}),
+          ...(body != '' ? {body} : {}),
           complete: task.complete
         };
 
         // Save the changes.
         database[ID] = ans;
         db.set(currentList, database, false);
-        return true;
+        return view.edit.updated(ID);
       }
-      return console.log('Backed out.');
+      return view.edit.backedOut(ID);
     }
   }
 }
