@@ -75,7 +75,7 @@ const Editor = {
         ` + '\n' + (task.body ? task.body : ''),
       })
       .confirm({
-        message: `Are you sure you want to edit task ${hlID}? This cannot be undone.`
+        message: `Are you sure you want to edit task ${ID}? This cannot be undone.`
       })
       .run(Editor.processAnswer(task, ID, database));
   },
