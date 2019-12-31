@@ -19,7 +19,7 @@ const {getCurrentList, capitalize, argumentTypesAre, displayPage} =
 // SECTION - Module Export (Fn)
 // -------------------------------------------- //
 
-module.exports = function({args: [ID]}) {
+module.exports = function({args: [ID]} = {args: []}) {
   // Check if the ID is a string and if the database exists
   const idIsString = argumentTypesAre('string', [ID]);
 
