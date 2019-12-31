@@ -38,7 +38,7 @@ const Delete = {
       prompt.confirm({
         message: 'Are you sure? This action cannot be undone.',
       }).run(function (answer) {
-        if (answer.confirm) {
+        if (answer.confirm || process.env.confirm__ == 'false') {
           // Delete tasks by ID
           if (IDs.length) {
             Delete.deleteIDs(IDs);
