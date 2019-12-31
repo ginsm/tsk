@@ -4,6 +4,10 @@
 // SECTION - Module Imports
 // -------------------------------------------- //
 
+// Import state & get the state
+const {getState, setState} = require('./util/state.js');
+getState();
+
 // Import interface modules
 const simplecmds = require('simplecmds');
 const programOptions = require('./interface/options.js');
@@ -37,3 +41,6 @@ simplecmds
     .parse(process.argv);
 
 // -------------------------------------------- //
+
+// Save the state
+setState();

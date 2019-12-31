@@ -30,7 +30,7 @@ module.exports = function({args: [nameOfList]}) {
   // Create it if it does not exist
   if (nameOfList !== 'state') {
     db.set(nameOfList, []);
-    db.set('state', {currentList: nameOfList});
+    process.env.current__ = nameOfList;
     return view.list.switchedList(nameOfList);
   }
 

@@ -70,7 +70,7 @@ const Move = {
       
     // Set the state to the new name
     if (database == currentList) {
-      db.set('state', {currentList: newName});
+      process.env.current__ = newName;
     }
 
     // Rename the database
