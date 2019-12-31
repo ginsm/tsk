@@ -49,7 +49,6 @@ const Move = {
   // SECTION - Rename a list
   // -------------------------------------------- //
   
-  
   renameList(args) {
     // Check whether arguments are databases or not
     const isDatabase = args.map((arg) => db.exists(arg));
@@ -88,7 +87,6 @@ const Move = {
   // -------------------------------------------- //
   // SECTION - Change a Task's ID
   // -------------------------------------------- //
-  
 
   changeTaskID(args) {
     // Get database and check if the indices are valid
@@ -119,7 +117,6 @@ const Move = {
   // -------------------------------------------- //
   // SECTION - Move a task to a different list
   // -------------------------------------------- //
-  
 
   moveTaskToList(args) {
     // Get the Task ID, destination, and task itself.
@@ -143,7 +140,7 @@ const Move = {
   }
 
   // -------------------------------------------- //
-  
+
 }
 
 // -------------------------------------------- //
