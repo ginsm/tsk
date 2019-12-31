@@ -15,12 +15,11 @@ const currentList = getCurrentList();
 // -------------------------------------------- //
 
 
-
 // -------------------------------------------- //
-// SECTION - Module Export (Object)
+// SECTION - Toggle View Methods
 // -------------------------------------------- //
 
-module.exports = {
+const ToggleView = {
   // Alert that a task completion state has been toggled
   toggledTask(id, complete) {
     const status = complete ? theme.cmp('complete') : theme.wip('in progress');
@@ -29,7 +28,7 @@ module.exports = {
     `);
   },
 
-  
+
   // Alert that multiple tasks have been toggled
   toggledMultipleTasks(amount) {
     console.log(oneLine`
@@ -38,6 +37,8 @@ module.exports = {
     `);
   },
 
+
+  // Alert that the IDs were invalid
   invalidIDs(ID) {
     // Handle multiple invalid IDs
     if (ID.length > 1) {
@@ -50,7 +51,17 @@ module.exports = {
     console.log(oneLine`
       Error: Task ${ID} doesn't exist and couldn't be toggled.
     `);
-  }
+  },
 }
+
+// -------------------------------------------- //
+
+
+
+// -------------------------------------------- //
+// SECTION - Module Export (Object)
+// -------------------------------------------- //
+
+module.exports = ToggleView;
 
 // -------------------------------------------- //

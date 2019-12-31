@@ -16,7 +16,7 @@ const theme = require('../util/theme.js');
 // SECTION - Move View Methods
 // -------------------------------------------- //
 
-const Move = {
+const MoveView = {
 
   // -------------------------------------------- //
   // SECTION - Rename List Alerts
@@ -87,6 +87,6 @@ const Move = {
 // SECTION - Module Export (Object)
 // -------------------------------------------- //
 
-module.exports = Move;
+module.exports = MoveView;
 
 // -------------------------------------------- //

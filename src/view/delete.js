@@ -20,7 +20,7 @@ const currentList = getCurrentList();
 // SECTION - Delete View Methods
 // -------------------------------------------- //
 
-const Delete = {
+const DeleteView = {
   deletedIDs(database, IDs) {
     if (IDs.length) {
       // If there is more than one deleted
@@ -77,6 +77,6 @@ const Delete = {
 // SECTION - Module Export (Object)
 // -------------------------------------------- //
 
-module.exports = Delete;
+module.exports = DeleteView;
 
 // -------------------------------------------- //

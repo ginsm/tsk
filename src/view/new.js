@@ -14,7 +14,7 @@ const theme = require('../util/theme.js');
 // SECTION - New View Methods
 // -------------------------------------------- //
 
-const New = {
+const NewView = {
   // Alert that a task has been created
   taskCreated(id) {
     const currList = theme.hl(getCurrentList());
@@ -30,6 +30,6 @@ const New = {
 // SECTION - Module Export (Object)
 // -------------------------------------------- //
 
-module.exports = New;
+module.exports = NewView;
 
 // -------------------------------------------- //

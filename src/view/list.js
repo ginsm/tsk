@@ -16,7 +16,7 @@ const theme = require('../util/theme.js');
 // SECTION - List View Methods
 // -------------------------------------------- //
 
-const List = {
+const ListView = {
   // Alert that a new list is being used
   switchedList(nameOfList, allowed = true) {
     // Print the confirmation message
@@ -55,6 +55,6 @@ const List = {
 // SECTION - Module Export (Object)
 // -------------------------------------------- //
 
-module.exports = List;
+module.exports = ListView;
 
 // -------------------------------------------- //
