@@ -32,7 +32,7 @@ const Helpers = {
   
   // Get the current list
   getCurrentList() {
-    return db.get('state').currentList;
+    return process.env.current__;
   },
 
 
