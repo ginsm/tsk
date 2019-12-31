@@ -37,10 +37,12 @@ const Prompter = {
 
   // Confirm prompt
   confirm({message = '', name = 'confirm'}) {
-    // Create the new confirm prompt
-    Prompter.questions = Prompter.questions.concat({
-      type: 'confirm', name, message,
-    });
+    if (process.env.confirm__ == 'true') {
+      // Create the new confirm prompt
+      Prompter.questions = Prompter.questions.concat({
+        type: 'confirm', name, message,
+      });
+    }
 
     // Return 'his for chaining
     return this;
