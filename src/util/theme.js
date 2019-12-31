@@ -20,6 +20,9 @@ const Theme = colors.theme({
   // Highlight list
   hl: colors.magenta,
 
+  // Extra highlight
+  hl2: colors.yellow,
+  
   // Work in Progress
   wip: colors.red,
 
@@ -28,9 +31,6 @@ const Theme = colors.theme({
 
   // Dim
   dim: colors.dim,
-
-  // Extra highlight
-  hl2: colors.yellow,
 });
 
 // -------------------------------------------- //
