@@ -16,7 +16,7 @@ const commonConfig = require('./common.config.js');
 
 
 // -------------------------------------------- //
-// SECTION - Dev Settings
+// SECTION - Production Settings
 // -------------------------------------------- //
 
 const Production = merge(commonConfig, {
