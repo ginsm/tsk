@@ -19,6 +19,11 @@ const currentList = getCurrentList();
 // -------------------------------------------- //
 
 const Move = {
+
+  // -------------------------------------------- //
+  // SECTION - Exposed Method
+  // -------------------------------------------- //
+  
   mover({args, valid}) {
     // Rename a list (database)
     if (argumentTypesAre('string', args)) {
@@ -36,6 +41,14 @@ const Move = {
     }
   },
 
+  // -------------------------------------------- //
+
+
+
+  // -------------------------------------------- //
+  // SECTION - Rename a list
+  // -------------------------------------------- //
+  
   
   renameList(args) {
     // Check whether arguments are databases or not
@@ -68,6 +81,14 @@ const Move = {
     view.move.renamedDatabase(database, newName);
   },
 
+  // -------------------------------------------- //
+
+
+  
+  // -------------------------------------------- //
+  // SECTION - Change a Task's ID
+  // -------------------------------------------- //
+  
 
   changeTaskID(args) {
     // Get database and check if the indices are valid
@@ -91,6 +112,14 @@ const Move = {
     return view.move.invalidID(IDs);
   },
 
+  // -------------------------------------------- //
+
+
+
+  // -------------------------------------------- //
+  // SECTION - Move a task to a different list
+  // -------------------------------------------- //
+  
 
   moveTaskToList(args) {
     // Get the Task ID, destination, and task itself.
@@ -112,6 +141,9 @@ const Move = {
     // Alert that the destination does not exist
     return view.move.listNotFound(destination);
   }
+
+  // -------------------------------------------- //
+  
 }
 
 // -------------------------------------------- //
