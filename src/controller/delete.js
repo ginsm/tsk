@@ -5,6 +5,7 @@
 // Internal modules
 const {getCurrentList, generateIDs, separate} = require('../util/helpers');
 const prompt = require('../util/prompter.js');
+const theme = require('../util/theme.js');
 const db = require('../model/db');
 const view = require('../view');
 
@@ -34,15 +35,21 @@ const Delete = {
       const separateLists = (value) => databases.includes(value);
       const {lists, IDs} = separate(args, separateLists, ['lists', 'IDs']);
 
-      // Delete tasks by ID
-      if (IDs.length) {
-        Delete.deleteIDs(IDs);
-      }
+      prompt.confirm({
+        message: 'Are you sure? This action cannot be undone.',
+      }).run(function (answer) {
+        if (answer.confirm) {
+          // Delete tasks by ID
+          if (IDs.length) {
+            Delete.deleteIDs(IDs);
+          }
 
-      // Delete the lists by name
-      if (lists.length) {
-        Delete.deleteLists(lists);
-      }
+          // Delete the lists by name
+          if (lists.length) {
+            Delete.deleteLists(lists);
+          }
+        }
+      });
     }
   },
 
